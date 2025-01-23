@@ -9,17 +9,17 @@ typedef struct LNode
     int data;
     struct LNode* next;
 }LNode,*LinkList;
-Status InitList(LinkList& L)
+Status InitList(LinkList& L)//传进去的是一个指向LNode型变量的指针
 {
-    L=new LNode;//动态分配内存生成一个头指针，该指针指向头结点
-    L->next=nullptr;//头结点指针域置空
+    L=new LNode;//动态分配内存生成一个头指针，该指针指向头结点，L:LNode* L,头指针无数据域，它是一个LNode型指针
+    L->next=nullptr;//头结点指针域置空，等价于（*L）.next
     return OK;
 }
-Status GetElem(LinkList L,int i,int& e)
+Status GetElem(LinkList L,int i,int& e)//输入位置，获取该位置的元素
 {
-    LNode* p = L->next;
-    int j=1;
-    while(p&&j<i)
+    LNode* p = L->next;//p指向首元结点
+    int j=1;//计数器
+    while(p&&j<i)//从首元节点开始
     {
         p=p->next;
         ++j;
@@ -31,14 +31,14 @@ Status GetElem(LinkList L,int i,int& e)
 }
 LNode* LocateElem(LinkList L,int e)
 {
-    LNode* p=L->next;
+    LNode* p=L->next;//指向首元节点
     while(p&&p->data!=e)
         p=p->next;
     return p;
 }
-Status ListInsert(LinkList& L,int i,int e)
+Status ListInsert(LinkList& L,int i,int e)//插入元素
 {
-    LNode* p=L;
+    LNode* p=L;//头结点
     int j=0;
     while(p&&(j<i-1))
     {

@@ -4,7 +4,8 @@ project(DataStructure)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(DataStructure
-        SqList.c
-        SingleLinkedList.c
-        SqList.cpp
-        SingleLinkedList.cpp)
+        LinearList/SqList.c
+        LinearList/SingleLinkedList.c
+        LinearList/SqList.cpp
+        LinearList/SingleLinkedList.cpp
+        LinearList/HeadInsertion.cpp)
