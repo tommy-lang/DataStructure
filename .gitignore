@@ -1,0 +1,40 @@
+# 忽略 CMake 生成的文件
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# 忽略编译生成的文件
+*.o
+*.obj
+*.so
+*.a
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.lib
+
+# 忽略调试信息
+*.debug
+*.dSYM/
+
+# 忽略 IDE 配置文件
+.vscode/
+.idea/
+
+# 忽略临时文件
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# 忽略其他构建系统生成的文件
+build/
+Debug/
+Release/
+dist/
