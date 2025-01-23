@@ -8,4 +8,5 @@ add_executable(DataStructure
         LinearList/SingleLinkedList.c
         LinearList/SqList.cpp
         LinearList/SingleLinkedList.cpp
-        LinearList/HeadInsertion.cpp)
+        LinearList/HeadInsertion.cpp
+        LinearList/HeadInsertion.c)
