@@ -11,7 +11,4 @@ add_executable(DataStructure
         LinearList/HeadInsertion.cpp
         LinearList/HeadInsertion.c
         LinearList/RearInsertion.cpp
-        LinearList/RearInsertion.c
-        LinearList/DoublyLinkedList.cpp
-        LinearList/CircularStructureSingleLinkedList.cpp
-        LinearList/CircularStructureSingleLinkedList.c)
+        LinearList/RearInsertion.c)
