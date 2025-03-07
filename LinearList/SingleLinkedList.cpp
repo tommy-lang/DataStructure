@@ -45,7 +45,7 @@ Status ListDelete(LinkList& L,int i)
         p=p->next;
         ++j;
     }
-    if(!(p->next)||(j>i-1))
+    if(!(p->next)||(j>i-1))//插入位置非法
         return ERROR;
     LNode* q=p->next;
     p->next=q->next;
