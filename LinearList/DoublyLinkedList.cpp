@@ -54,10 +54,15 @@ Status ListDelete_DuL(DuLinkList& L,int i)
     }
     if(j!=i-1)
         return ERROR;
-    DuLNode* q=p->next;
-    p->next=q->next;
-    q->next->prior=p;
-    delete q;
+    DuLNode* q = p->next;           // q指向要删除的节点
+    p->next = q->next;              // p指向q的下一个节点
+
+    if (q->next != nullptr)
+    {       // 如果q的下一个节点不为空
+        q->next->prior = p;         // 更新q的下一个节点的prior指向p
+    }
+
+    delete q;                       // 删除节点q
     return OK;
 }
 
