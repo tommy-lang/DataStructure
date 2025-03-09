@@ -114,3 +114,41 @@ DuLNode* LocateElem(const DuLinkList& L,int e)
         p=p->next;
     return p;
 }
+
+int* LocateElem(DuLinkList& L,int v,int& count)
+{
+    if(!L||!L->next)
+    {
+        count=0;
+        return nullptr;
+    }
+    DuLNode* p=L->next;
+    count=0;
+    int index=1;
+    while(p)
+    {
+        if(p->data==v)
+            count++;
+        p=p->next;
+    }
+
+    if(count==0)
+        return nullptr;
+
+    int* result=new int[count];
+    p=L->next;
+    index=1;
+    int i=0;
+
+    while(p)
+    {
+        if(p->data==v)
+        {
+            result[i++]=index;
+        }
+        p=p->next;
+        index++;
+    }
+
+    return result;
+}
