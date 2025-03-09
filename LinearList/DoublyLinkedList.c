@@ -4,115 +4,127 @@
 #define OK 1
 #define ERROR 0
 #define OVERFLOW (-2)
-typedef int Status;
 
+typedef int Status;
 typedef struct DuLNode {
     int data;
     struct DuLNode* prior;
     struct DuLNode* next;
 } DuLNode, *DuLinkList;
 
-// 初始化链表
+// 初始化双向循环链表
 Status InitList(DuLinkList* L) {
-    *L = (DuLinkList)malloc(sizeof(DuLNode)); // 分配头结点内存
-    if (!*L) return OVERFLOW; // 内存分配失败
+    *L = (DuLNode*)malloc(sizeof(DuLNode));
+    if (!(*L)) return OVERFLOW;
     (*L)->next = *L;
     (*L)->prior = *L;
     return OK;
 }
 
-// 插入元素
-Status ListInsert_DuL(DuLinkList* L, int i, int e) {
-    if (i < 1) return ERROR; // i<1，位置无效
-    DuLNode* p = *L;
+// 在双向链表的第 i 个位置插入元素 e
+Status ListInsert_DuL(DuLinkList L, int i, int e) {
+    if (i < 1) return ERROR;
+    DuLNode* p = L;
     int j = 0;
     while ((j < i - 1) && p) {
         p = p->next;
         j++;
     }
-    if (j != i - 1) // 指针p没有到达插入位置的前一个结点
-        return ERROR;
+    if (!p) return ERROR;
 
-    DuLNode* s = (DuLNode*)malloc(sizeof(DuLNode)); // 分配新结点
-    if (!s) return OVERFLOW; // 内存分配失败
+    DuLNode* s = (DuLNode*)malloc(sizeof(DuLNode));
+    if (!s) return OVERFLOW;
     s->data = e;
     s->next = p->next;
     s->prior = p;
-    s->next->prior = s;
+    if (p->next) p->next->prior = s;
     p->next = s;
+
     return OK;
 }
 
-// 删除元素
-Status ListDelete_DuL(DuLinkList* L, int i) {
-    if (i < 1) return ERROR; // i<1，位置无效
-    DuLNode* p = *L;
+// 删除双向链表的第 i 个元素
+Status ListDelete_DuL(DuLinkList L, int i) {
+    if (i < 1) return ERROR;
+    DuLNode* p = L;
     int j = 0;
     while ((j < i - 1) && p) {
         p = p->next;
         j++;
     }
-    if (j != i - 1) // 指针p没有到达删除位置的前一个结点
-        return ERROR;
+    if (j != i - 1 || !(p->next)) return ERROR;
 
     DuLNode* q = p->next;
     p->next = q->next;
-    if (q->next) {
-        q->next->prior = p;
-    }
-    free(q); // 释放内存
+    if (q->next) q->next->prior = p;
+    free(q);
+
     return OK;
 }
 
-// 获取元素
-Status GetElem(const DuLinkList L, int i, int* e) {
+// 获取第 i 个元素的值
+Status GetElem(DuLinkList L, int i, int* e) {
     DuLNode* p = L->next;
     int j = 1;
     while (p && j < i) {
         p = p->next;
         ++j;
     }
-    if (!p || j > i)
-        return ERROR;
+    if (!p || j > i) return ERROR;
     *e = p->data;
     return OK;
 }
 
-// 查找元素
-DuLNode* LocateElem(const DuLinkList L, int e) {
+// 查找链表中值为 e 的结点
+DuLNode* LocateElem(DuLinkList L, int e) {
     DuLNode* p = L->next;
     while (p && p->data != e)
         p = p->next;
     return p;
 }
 
+// 打印链表中的元素
+void PrintList(DuLinkList L) {
+    DuLNode* p = L->next;
+    while (p != L) {
+        printf("%d ", p->data);
+        p = p->next;
+    }
+    printf("\n");
+}
+
 // 测试代码
 int main() {
     DuLinkList L;
-    if (InitList(&L) == OK) {
-        printf("链表初始化成功。\n");
+    InitList(&L);
 
-        // 插入元素
-        ListInsert_DuL(&L, 1, 10);
-        ListInsert_DuL(&L, 2, 20);
-        ListInsert_DuL(&L, 3, 30);
+    printf("插入 5 个元素到双向链表：\n");
+    for (int i = 1; i <= 5; i++) {
+        ListInsert_DuL(L, i, i * 10);
+    }
+    PrintList(L);
 
-        // 获取元素
-        int e;
-        if (GetElem(L, 2, &e) == OK)
-            printf("第2个元素是: %d\n", e);
+    printf("删除第 3 个元素：\n");
+    ListDelete_DuL(L, 3);
+    PrintList(L);
 
-        // 删除元素
-        ListDelete_DuL(&L, 2);
+    printf("查找元素 40：\n");
+    DuLNode* node = LocateElem(L, 40);
+    if (node) {
+        printf("找到元素 40\n");
+    } else {
+        printf("元素 40 不在链表中\n");
+    }
 
-        // 查找元素
-        DuLNode* p = LocateElem(L, 20);
-        if (p)
-            printf("找到了元素: %d\n", p->data);
-        else
-            printf("没有找到元素 20。\n");
+    printf("获取第 2 个元素：\n");
+    int value;
+    if (GetElem(L, 2, &value) == OK) {
+        printf("第 2 个元素的值为 %d\n", value);
+    } else {
+        printf("获取元素失败\n");
     }
 
     return 0;
 }
+
 
