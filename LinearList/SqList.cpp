@@ -80,7 +80,7 @@ int main() {
     InsertValue(33, 1, &L);
     InsertValue(34, 2, &L);
     InsertValue(35, 3, &L);
-    InsertValue(35, 4, &L);
+    InsertValue(31, 4, &L);
     InsertValue(37, 5, &L);
 
     // 删除第5个元素

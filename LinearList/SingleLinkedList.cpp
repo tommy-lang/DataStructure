@@ -76,6 +76,24 @@ LNode* LocateElem(const LinkList& L,int e)
     return p;
 }
 
+void DeleteNodeByValue(LinkList& L, int v)
+{
+    LNode* p = L;
+    while (p != nullptr && p->next != nullptr)
+    {
+        if (p->next->data == v)
+        {
+            LNode* q = p->next;
+            p->next = q->next;
+            delete q;
+        }
+        else
+        {
+            p = p->next;  // 只有在没有删除节点时，才移动到下一个节点
+        }
+    }
+}
+
 int main()
 {
     LinkList L;
