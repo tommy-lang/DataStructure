@@ -93,38 +93,5 @@ void PrintList(DuLinkList L) {
     printf("\n");
 }
 
-// 测试代码
-int main() {
-    DuLinkList L;
-    InitList(&L);
-
-    printf("插入 5 个元素到双向链表：\n");
-    for (int i = 1; i <= 5; i++) {
-        ListInsert_DuL(L, i, i * 10);
-    }
-    PrintList(L);
-
-    printf("删除第 3 个元素：\n");
-    ListDelete_DuL(L, 3);
-    PrintList(L);
-
-    printf("查找元素 40：\n");
-    DuLNode* node = LocateElem(L, 40);
-    if (node) {
-        printf("找到元素 40\n");
-    } else {
-        printf("元素 40 不在链表中\n");
-    }
-
-    printf("获取第 2 个元素：\n");
-    int value;
-    if (GetElem(L, 2, &value) == OK) {
-        printf("第 2 个元素的值为 %d\n", value);
-    } else {
-        printf("获取元素失败\n");
-    }
-
-    return 0;
-}
 
 
