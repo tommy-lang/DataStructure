@@ -68,8 +68,10 @@ Status GetElem(const LinkList& L,int i,int& e)//取值函数:获取第i个结点
     return OK;
 }
 
-int* LocateElem(LinkList& L, int v, int& count) {
-    if (!L || !L->next) {  // 检查链表是否为空或只有头结点
+int* LocateElem(LinkList& L, int v, int& count)
+{
+    if (!L || !L->next)
+    {  // 检查链表是否为空或只有头结点
         count = 0;
         return nullptr;
     }
@@ -78,7 +80,8 @@ int* LocateElem(LinkList& L, int v, int& count) {
     LNode* p = L->next;
     count = 0;
     int index = 1;
-    while (p) {
+    while (p)
+    {
         if (p->data == v) count++;
         p = p->next;
     }
@@ -91,8 +94,10 @@ int* LocateElem(LinkList& L, int v, int& count) {
     index = 1;
     int i = 0;
 
-    while (p) {
-        if (p->data == v) {
+    while (p)
+    {
+        if (p->data == v)
+        {
             result[i++] = index;  // 记录索引
         }
         p = p->next;
@@ -103,7 +108,8 @@ int* LocateElem(LinkList& L, int v, int& count) {
 }
 
 // 释放动态分配的数组
-void FreeArray(int* arr) {
+void FreeArray(int* arr)
+{
     delete[] arr;
 }
 
@@ -124,89 +130,4 @@ void DeleteNodeByValue(LinkList& L, int v)
         }
     }
 }
-
-int main()
-{
-    LinkList L;
-
-    // Initialize the list
-    if (InitList(L) == OK)
-    {
-        std::cout << "List initialized successfully.\n";
-    }
-    else
-    {
-        std::cout << "List initialization failed.\n";
-    }
-
-    // Insert elements into the list
-    if (ListInsert(L, 1, 10) == OK)
-    {
-        std::cout << "Inserted 10 at position 1.\n";
-    }
-    else
-    {
-        std::cout << "Insertion failed.\n";
-    }
-    if (ListInsert(L, 2, 20) == OK)
-    {
-        std::cout << "Inserted 20 at position 2.\n";
-    }
-    else
-    {
-        std::cout << "Insertion failed.\n";
-    }
-    if (ListInsert(L, 3, 30) == OK)
-    {
-        std::cout << "Inserted 30 at position 3.\n";
-    }
-    else
-    {
-        std::cout << "Insertion failed.\n";
-    }
-
-    // Get element at position 2
-    int e;
-    if (GetElem(L, 2, e) == OK)
-    {
-        std::cout << "Element at position 2: " << e << "\n";
-    }
-    else
-    {
-        std::cout << "Failed to get element at position 2.\n";
-    }
-
-    // Locate element with value 20
-    LNode* node = LocateElem(L, 20);
-    if (node)
-    {
-        std::cout << "Element 20 found in the list.\n";
-    }
-    else
-    {
-        std::cout << "Element 20 not found in the list.\n";
-    }
-
-    // Delete element at position 2
-    if (ListDelete(L, 2) == OK)
-    {
-        std::cout << "Deleted element at position 2.\n";
-    }
-    else
-    {
-        std::cout << "Failed to delete element at position 2.\n";
-    }
-
-    // Try to get the element again at position 2
-    if (GetElem(L, 2, e) == OK)
-    {
-        std::cout << "Element at position 2: " << e << "\n";
-    }
-    else
-    {
-        std::cout << "Failed to get element at position 2.\n";
-    }
-    return 0;
-}
-
 
