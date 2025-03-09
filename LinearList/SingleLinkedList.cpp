@@ -68,12 +68,43 @@ Status GetElem(const LinkList& L,int i,int& e)//取值函数:获取第i个结点
     return OK;
 }
 
-LNode* LocateElem(const LinkList& L,int e)
-{
-    LNode* p=L->next;
-    while(p&&p->data!=e)
-        p=p->next;
-    return p;
+int* LocateElem(LinkList& L, int v, int& count) {
+    if (!L || !L->next) {  // 检查链表是否为空或只有头结点
+        count = 0;
+        return nullptr;
+    }
+
+    // 第一次遍历：计算匹配的元素个数
+    LNode* p = L->next;
+    count = 0;
+    int index = 1;
+    while (p) {
+        if (p->data == v) count++;
+        p = p->next;
+    }
+
+    if (count == 0) return nullptr;  // 没找到，直接返回
+
+    // 第二次遍历：存储匹配的索引
+    int* result = new int[count];  // 申请动态数组
+    p = L->next;
+    index = 1;
+    int i = 0;
+
+    while (p) {
+        if (p->data == v) {
+            result[i++] = index;  // 记录索引
+        }
+        p = p->next;
+        index++;
+    }
+
+    return result;
+}
+
+// 释放动态分配的数组
+void FreeArray(int* arr) {
+    delete[] arr;
 }
 
 void DeleteNodeByValue(LinkList& L, int v)
