@@ -18,26 +18,29 @@ Status InitList(DuLinkList& L)
     return OK;
 }
 
-Status ListInsert_DuL(DuLinkList& L,int i,int e)
+Status ListInsert_DuL(DuLinkList& L, int i, int e)
 {
-    if(i<1) return ERROR;//i<1,位置不存在
-    DuLNode* p=L;
-    int j=0;
-    while((j<i-1)&&p)
+    if (i < 1) return ERROR; // i<1, 位置不存在
+    DuLNode* p = L;
+    int j = 0;
+    while ((j < i - 1) && p)
     {
-        p=p->next;
+        p = p->next;
         j++;
     }
-    if(j!=i-1||(p->next==nullptr))//指针p没有到达插入位置的前一个结点
-        return ERROR;
-    DuLNode* s=new DuLNode;
-    s->data=e;
-    s->next=p->next;
-    s->prior=p;
-    s->next->prior=s;
-    p->next=s;
+    if (!p) return ERROR;  // 如果 p 为空，说明 i 超出范围，插入失败
+
+    DuLNode* s = new DuLNode;
+    s->data = e;
+    s->next = p->next;
+    s->prior = p;
+    if (p->next)  // 避免访问 nullptr
+        p->next->prior = s;
+    p->next = s;
+
     return OK;
 }
+
 
 Status ListDelete_DuL(DuLinkList& L,int i)
 {
