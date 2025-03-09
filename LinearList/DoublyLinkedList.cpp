@@ -92,6 +92,8 @@ void DeleteNodeByValue(DuLinkList& L, int v)
 
 Status GetElem(const DuLinkList& L,int i,int& e)
 {
+    if(i<1)
+        return ERROR;
     DuLNode* p=L->next;
     int j=1;
     while(p&&j<i)
@@ -99,7 +101,7 @@ Status GetElem(const DuLinkList& L,int i,int& e)
         p=p->next;
         ++j;
     }
-    if(!p||j>i)
+    if(!p)
         return ERROR;
     e=p->data;
     return OK;
