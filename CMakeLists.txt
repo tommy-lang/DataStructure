@@ -17,4 +17,6 @@ add_executable(DataStructure
         LinearList/CircularStructureSingleLinkedList.c
         LinearList/DoublyLinkedList.c
         LinearList/CircularStructureDoublyLinkedList.cpp
-        LinearList/CircularStructureDoublyLinkedList.c)
+        LinearList/CircularStructureDoublyLinkedList.c
+        LinearList/课后算法设计题/AlgorithmDesign1.cpp
+        LinearList/课后算法设计题/AlgorithmDesign1.c)

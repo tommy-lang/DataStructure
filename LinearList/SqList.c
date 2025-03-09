@@ -16,7 +16,6 @@ typedef struct SqList
 
 Status InitList(SqList* L)
 {
-    L->elem=(int*)malloc(MAXSIZE*sizeof(int));
     if(!L->elem)
     {
         printf("Memory Allocation Failed.\n");
@@ -80,13 +79,15 @@ int main()
     InsertValue(33,1,&L);
     InsertValue(34,2,&L);
     InsertValue(35,3,&L);
-    InsertValue(36,4,&L);
+    InsertValue(35,4,&L);
     InsertValue(37,5,&L);
     DeleteValue(5,&L);
     for(int i=0;i<L.length;i++)
     {
         printf_s("%d ",L.elem[i]);
     }
+    SearchValue(35,&L);
+
     free(L.elem);
     return 0;
 }
