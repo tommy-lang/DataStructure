@@ -33,7 +33,7 @@ Status ListInsert_DuL(DuLinkList L, int i, int e) {
     if (!p) return ERROR;
 
     DuLNode* s = (DuLNode*)malloc(sizeof(DuLNode));
-    if (!s) return OVERFLOW;
+    if (!s) return OVERFLOW;//这出现在插入结点到尾部时
     s->data = e;
     s->next = p->next;
     s->prior = p;

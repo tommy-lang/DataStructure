@@ -34,7 +34,7 @@ Status ListInsert_DuL(DuLinkList& L, int i, int e)
     s->data = e;
     s->next = p->next;
     s->prior = p;
-    if (p->next)  // 避免访问 nullptr
+    if (p->next)  // 避免访问 nullptr，这出现在插入尾部时
         p->next->prior = s;
     p->next = s;
 
