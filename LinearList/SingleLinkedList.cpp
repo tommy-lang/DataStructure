@@ -79,7 +79,7 @@ LNode* LocateElem(const LinkList& L,int e)
 void DeleteNodeByValue(LinkList& L, int v)
 {
     LNode* p = L;
-    while (p != nullptr && p->next != nullptr)
+    while (p->next != nullptr)
     {
         if (p->next->data == v)
         {
