@@ -107,10 +107,20 @@ int* DeleteRepeatedElement(SqList* L, int v)
 }
 
 //删除所有值为v的元素，并返回删除后的新数组，不使用额外内存
-Status DeleteRepeatedElement(SqList& L,int v)
+Status DeleteRepeatedElement(SqList& L, int v)
 {
+    int j=0;
 
+    for(int i=0;i<L.length;i++)
+    {
+        if(L.elem[i]!=v)
+            L.elem[j++]=L.elem[i];
+    }
+
+    L.length=j;
+    return OK;
 }
+
 int main() {
     SqList L;
     InitList(&L);
