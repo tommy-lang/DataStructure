@@ -72,6 +72,45 @@ int DeleteValue(int i, SqList* L) {
     return OK;
 }
 
+//删除所有值为v的元素，并返回删除后的新数组，使用额外内存
+int* DeleteRepeatedElement(SqList* L, int v)
+{
+    if((*L).length==0)
+        return nullptr;
+    int count = 0;
+
+    for (int i = 0; i < L->length; i++)
+    {
+        if (L->elem[i] == v)
+        {
+            count++;
+        }
+    }
+
+    if (count == 0)
+    {
+        return nullptr;
+    }
+
+    int* result = new int[(L->length)-count];
+    int j = 0;
+
+    for (int i = 0; i < L->length; i++)
+    {
+        if (L->elem[i]!=v)
+        {
+            result[j++] = L->elem[i];
+        }
+    }
+
+    return result;
+}
+
+//删除所有值为v的元素，并返回删除后的新数组，不使用额外内存
+Status DeleteRepeatedElement(SqList& L,int v)
+{
+
+}
 int main() {
     SqList L;
     InitList(&L);
