@@ -13,8 +13,8 @@ typedef struct DuLNode
 Status InitList(DuLinkList& L)
 {
     L=new DuLNode;
-    L->next=L;
-    L->prior=L;
+    L->next=nullptr;
+    L->prior=nullptr;
     return OK;
 }
 

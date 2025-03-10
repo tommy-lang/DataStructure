@@ -64,6 +64,11 @@ Status GetElem(const LinkList& L, int i, int& e) {
     return OK;
 }
 
+int* LocateElem(LinkList& L,int v,int& count)
+{
+
+}
+
 // 按值查找元素，返回指向该元素的指针
 LNode* LocateElem(const LinkList& L, int e) {
     LNode* p = L->next;
