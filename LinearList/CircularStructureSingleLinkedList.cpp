@@ -64,10 +64,47 @@ Status GetElem(const LinkList& L, int i, int& e) {
     return OK;
 }
 
-int* LocateElem(LinkList& L,int v,int& count)
+//按值查找所有值域匹配的结点的索引，并返回一个int型指针
+int* LocateElem(LinkList& L, int v, int& count)
 {
+    if (!L || L->next == L)
+    {  // 空链表或只有一个头结点
+        count = 0;
+        return nullptr;
+    }
 
+    LNode* p = L->next;
+    count = 0;
+    int index = 1;
+
+    while (p != L)
+    {
+        if (p->data == v) count++;
+        p = p->next;
+    }
+
+    if (count == 0)
+        return nullptr;
+
+    // 申请动态数组
+    int* result = new int[count];
+    int i = 0;
+    index = 1;
+
+    // 重新遍历并存储索引
+    while (p != L)
+    {
+        if (p->data == v)
+        {
+            result[i++] = index;
+        }
+        p = p->next;
+        index++;
+    }
+
+    return result;
 }
+
 
 // 按值查找元素，返回指向该元素的指针
 LNode* LocateElem(const LinkList& L, int e) {
