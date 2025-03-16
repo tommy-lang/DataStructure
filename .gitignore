@@ -38,3 +38,4 @@ build/
 Debug/
 Release/
 dist/
+/cmake-build-debug/build.ninja
