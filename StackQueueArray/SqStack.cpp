@@ -36,7 +36,7 @@ Status Push(SqStack& S,int e)
     return OK;
 }
 
-Status Pop(SqStack& S,int& e)
+Status Pop(SqStack& S,int& e)//逻辑上实现了删除，物理上没有
 {
     if(S.top-S.base==0)
         return ERROR;

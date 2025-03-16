@@ -22,4 +22,6 @@ add_executable(DataStructure
         LinearList/课后算法设计题/AlgorithmDesign1.c
         StackQueueArray/SqStack.cpp
         StackQueueArray/SqStack.cpp
-        StackQueueArray/SqStack.c)
+        StackQueueArray/SqStack.c
+        StackQueueArray/LinkedStack.cpp
+        StackQueueArray/LinkedStack.c)
