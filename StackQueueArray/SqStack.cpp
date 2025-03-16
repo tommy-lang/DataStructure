@@ -61,6 +61,7 @@ void PrintStack(SqStack& S)
         std::cout<<S.base[i]<<" ";
     }
 }
+
 int main()
 {
     SqStack S;
@@ -71,14 +72,6 @@ int main()
     Push(S,4);
     Push(S,5);
     Push(S,6);
-    PrintStack(S);
-    int a;
-    int b;
-    int c;
-    Pop(S,a);
-    Pop(S,b);
-    Pop(S,c);
-    std::cout<<std::endl;
     PrintStack(S);
     return 0;
 }
