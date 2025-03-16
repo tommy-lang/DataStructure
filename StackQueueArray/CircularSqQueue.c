@@ -5,7 +5,6 @@
 #define OK 1
 #define ERROR 0
 #define OVERFLOW (-2)
-
 typedef int Status;
 
 // 默认队列最大可存储元素为 MAXQSIZE - 1
