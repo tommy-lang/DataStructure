@@ -8,19 +8,23 @@
 typedef int Status;
 
 // 链栈的top指针指向栈顶结点
-typedef struct StackNode {
+typedef struct StackNode
+{
     int data;
     struct StackNode* next;
 } StackNode, *LinkedStack;
 
-Status InitStack(LinkedStack* S) {
+Status InitStack(LinkedStack* S)
+{
     *S = NULL;
     return OK;
 }
 
-Status Push(LinkedStack* S, int e) { // 头部插入
+Status Push(LinkedStack* S, int e)
+{ // 头部插入
     StackNode* p = (StackNode*)malloc(sizeof(StackNode));
-    if (p == NULL) {
+    if (p == NULL)
+    {
         return OVERFLOW;
     }
     p->data = e;
@@ -29,7 +33,8 @@ Status Push(LinkedStack* S, int e) { // 头部插入
     return OK;
 }
 
-Status Pop(LinkedStack* S, int* e) { // 头部删除
+Status Pop(LinkedStack* S, int* e)
+{ // 头部删除
     if (*S == NULL)
         return ERROR;
     *e = (*S)->data;
@@ -39,26 +44,31 @@ Status Pop(LinkedStack* S, int* e) { // 头部删除
     return OK;
 }
 
-int GetTop(const LinkedStack S) {
+int GetTop(const LinkedStack S)
+{
     if (S == NULL)
         return ERROR;
     return S->data;
 }
 
-void PrintStack(const LinkedStack S) {
-    if (S == NULL) {
+void PrintStack(const LinkedStack S)
+{
+    if (S == NULL)
+    {
         printf("no elements in Stack.\n");
         return;
     }
     StackNode* p = S;
-    while (p != NULL) {
+    while (p != NULL)
+    {
         printf("%d ", p->data);
         p = p->next;
     }
     printf("\n");
 }
 
-int main() {
+int main()
+{
     LinkedStack S;
     InitStack(&S);
     Push(&S, 4);

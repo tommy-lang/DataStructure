@@ -3,7 +3,6 @@
 #define OK 1
 #define ERROR 0
 #define OVERFLOW (-2)
-
 typedef int Status;
 
 //链栈的top指针指向栈顶结点
