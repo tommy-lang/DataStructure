@@ -66,4 +66,6 @@ int main()
     Push(S,2);
     Push(S,1);
     PrintStack(S);
+    std::cout<<std::endl;
+    return 0;
 }

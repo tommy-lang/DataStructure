@@ -69,6 +69,7 @@ void PrintStack(const LinkedStack S)
 
 int main()
 {
+
     LinkedStack S;
     InitStack(&S);
     Push(&S, 4);
@@ -76,6 +77,7 @@ int main()
     Push(&S, 2);
     Push(&S, 1);
     PrintStack(S);
+
     return 0;
 }
 
