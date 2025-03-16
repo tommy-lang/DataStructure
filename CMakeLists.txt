@@ -26,4 +26,5 @@ add_executable(DataStructure
         StackQueueArray/LinkedStack.cpp
         StackQueueArray/LinkedStack.c
         StackQueueArray/CircularSqQueue.cpp
+        StackQueueArray/CircularSqQueue.c
         StackQueueArray/CircularSqQueue.c)
