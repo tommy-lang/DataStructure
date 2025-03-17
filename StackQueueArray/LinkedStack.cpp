@@ -55,7 +55,6 @@ void PrintStack(const LinkedStack& S)
         std::cout<<p->data<<" ";
         p=p->next;
     }
-    delete p;
 }
 int main()
 {
