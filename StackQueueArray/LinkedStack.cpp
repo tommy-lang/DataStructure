@@ -5,7 +5,7 @@
 #define OVERFLOW (-2)
 typedef int Status;
 
-//链栈的top指针指向栈顶结点
+//链栈的top指针指向栈顶结点，以单链表的表头作为栈顶
 typedef struct StackNode
 {
     int data;
