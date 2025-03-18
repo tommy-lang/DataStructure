@@ -7,6 +7,7 @@
 typedef int Status;
 
 //默认队列最大可存储元素为MAXQSIZE-1
+//队列的特点为队头插入，队尾删除
 typedef struct
 {
     int* base;
