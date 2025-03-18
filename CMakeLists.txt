@@ -29,4 +29,5 @@ add_executable(DataStructure
         StackQueueArray/CircularSqQueue.c
         StackQueueArray/LinkedQueue.cpp
         StackQueueArray/LinkedQueue.c
-        StackQueueArray/课后算法设计题/AlgorithmDesign1.cpp)
+        StackQueueArray/课后算法设计题/AlgorithmDesign1.cpp
+        StackQueueArray/课后算法设计题/AlgorithmDesign1.c)
