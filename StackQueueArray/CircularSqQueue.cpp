@@ -26,7 +26,9 @@ Status InitQueue(SqQueue& Q)
 
 int QueueLength(const SqQueue& Q)
 {
-    return(Q.rear-Q.front+MAXQSIZE)%MAXQSIZE;
+    return(Q.rear-Q.front+MAXQSIZE)%MAXQSIZE;//这是为了解决C语言中负数(Q.rear-Q.front)可能小于0
+    // 进行mod运算时可能不会得到数学上的模运算的结果，
+    //另外即使Q.rear-Q.front为正数，但是加上MAXQSIZE后它和Q.rear-Q.front为同余关系，模运算结果一样。
 }
 
 Status EnQueue(SqQueue& Q,int e)//尾部插入
