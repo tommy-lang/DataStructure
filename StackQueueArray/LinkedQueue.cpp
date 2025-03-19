@@ -52,4 +52,5 @@ int GetHead(const LinkQueue& Q)
 {
     if(Q.front!=Q.rear)//不为空队列
         return Q.front->next->data;
+    return ERROR;
 }
