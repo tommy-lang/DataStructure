@@ -18,8 +18,6 @@ typedef struct
 Status InitStack(SqStack& S)
 {
     S.base=new int[MAXSIZE];
-    if(!S.base)
-        exit(OVERFLOW);
     S.top=S.base;
     S.StackSize=MAXSIZE;
     S.CurrentSize=0;
