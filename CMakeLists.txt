@@ -33,4 +33,6 @@ add_executable(DataStructure
         StackQueueArray/课后算法设计题/AlgorithmDesign1.c
         StackQueueArray/课后算法设计题/AlgorithmDesign2.cpp
         StackQueueArray/test.cpp
-        StackQueueArray/课后算法设计题/AlgorithmDesign2.c)
+        StackQueueArray/课后算法设计题/AlgorithmDesign2.c
+        StackQueueArray/课后算法设计题/AlgorithmDesign5.cpp
+        StackQueueArray/课后算法设计题/AlgorithmDesign5.c)
