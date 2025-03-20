@@ -55,3 +55,39 @@ int GetHead(const SqQueue& Q)
         return ERROR;
     return Q.base[Q.front];
 }
+
+void PrintQueueFIFO(const SqQueue& Q)
+{
+    if (Q.front == Q.rear)
+    {
+        std::cout << "Queue is empty." << std::endl;
+        return;
+    }
+
+    std::cout << "Queue elements: ";
+    for (int i = Q.front; i != Q.rear; i = (i + 1) % MAXQSIZE)
+    {
+        std::cout << Q.base[i] << " ";
+    }
+
+    std::cout << std::endl;
+}
+
+int main()
+{
+    SqQueue Q;
+    InitQueue(Q);
+
+    EnQueue(Q, 10);
+    EnQueue(Q, 20);
+    EnQueue(Q, 30);
+    EnQueue(Q, 40);
+
+    PrintQueueFIFO(Q);  // 输出：10 20 30 40
+
+    int e;
+    DeQueue(Q, e);
+    PrintQueueFIFO(Q);  // 输出：20 30 40
+
+    return 0;
+}
