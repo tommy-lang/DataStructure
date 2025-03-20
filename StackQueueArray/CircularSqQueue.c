@@ -93,7 +93,6 @@ int main()
     printf("Dequeued element: %d\n", e); // 输出：Dequeued element: 10
 
     PrintQueueFIFO(&Q); // 输出：20 30 40
-
     DestroyQueue(&Q);
     return 0;
 }

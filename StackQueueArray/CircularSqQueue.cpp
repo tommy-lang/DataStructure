@@ -71,7 +71,6 @@ void PrintQueueFIFO(const SqQueue& Q)
 
     std::cout << std::endl;
 }
-
 int main()
 {
     SqQueue Q;
