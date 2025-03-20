@@ -88,6 +88,5 @@ int main()
     int e;
     DeQueue(Q, e);
     PrintQueueFIFO(Q);  // 输出：20 30 40
-
     return 0;
 }

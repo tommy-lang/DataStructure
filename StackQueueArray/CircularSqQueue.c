@@ -15,7 +15,8 @@ typedef struct {
 } SqQueue;
 
 // 初始化队列
-Status InitQueue(SqQueue* Q) {
+Status InitQueue(SqQueue* Q)
+{
     Q->base = (int*)malloc(MAXQSIZE * sizeof(int));
     if (!Q->base) {
         exit(OVERFLOW);
