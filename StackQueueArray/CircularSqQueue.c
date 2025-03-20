@@ -18,7 +18,8 @@ typedef struct {
 Status InitQueue(SqQueue* Q)
 {
     Q->base = (int*)malloc(MAXQSIZE * sizeof(int));
-    if (!Q->base) {
+    if (!Q->base)
+    {
         exit(OVERFLOW);
     }
     Q->front = Q->rear = 0;
@@ -28,7 +29,8 @@ Status InitQueue(SqQueue* Q)
 // 入队操作（队尾插入）
 Status EnQueue(SqQueue* Q, int e)
 {
-    if ((Q->rear + 1) % MAXQSIZE == Q->front) {
+    if ((Q->rear + 1) % MAXQSIZE == Q->front)
+    {
         return ERROR; // 队列满
     }
     Q->base[Q->rear] = e;
@@ -37,7 +39,8 @@ Status EnQueue(SqQueue* Q, int e)
 }
 
 // 出队操作（队头删除）
-Status DeQueue(SqQueue* Q, int* e) {
+Status DeQueue(SqQueue* Q, int* e)
+{
     if (Q->front == Q->rear) {
         return ERROR; // 队列空
     }
@@ -47,7 +50,8 @@ Status DeQueue(SqQueue* Q, int* e) {
 }
 
 // 按照 FIFO（先进先出）顺序打印队列元素
-void PrintQueueFIFO(const SqQueue* Q) {
+void PrintQueueFIFO(const SqQueue* Q)
+{
     if (Q->front == Q->rear) {
         printf("Queue is empty.\n");
         return;
@@ -55,7 +59,8 @@ void PrintQueueFIFO(const SqQueue* Q) {
 
     printf("Queue elements: ");
     int i = Q->front;
-    while (i != Q->rear) {
+    while (i != Q->rear)
+    {
         printf("%d ", Q->base[i]);
         i = (i + 1) % MAXQSIZE;
     }
@@ -63,14 +68,16 @@ void PrintQueueFIFO(const SqQueue* Q) {
 }
 
 // 释放队列所占的内存
-void DestroyQueue(SqQueue* Q) {
+void DestroyQueue(SqQueue* Q)
+{
     free(Q->base);
     Q->base = NULL;
     Q->front = Q->rear = 0;
 }
 
 // 测试代码
-int main() {
+int main()
+{
     SqQueue Q;
     InitQueue(&Q);
 
