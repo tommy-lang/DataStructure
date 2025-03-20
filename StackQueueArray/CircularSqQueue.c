@@ -8,7 +8,8 @@
 typedef int Status;
 
 // 队列结构定义
-typedef struct {
+typedef struct
+{
     int* base;
     int front;
     int rear;
@@ -41,7 +42,8 @@ Status EnQueue(SqQueue* Q, int e)
 // 出队操作（队头删除）
 Status DeQueue(SqQueue* Q, int* e)
 {
-    if (Q->front == Q->rear) {
+    if (Q->front == Q->rear)
+    {
         return ERROR; // 队列空
     }
     *e = Q->base[Q->front];
@@ -52,7 +54,8 @@ Status DeQueue(SqQueue* Q, int* e)
 // 按照 FIFO（先进先出）顺序打印队列元素
 void PrintQueueFIFO(const SqQueue* Q)
 {
-    if (Q->front == Q->rear) {
+    if (Q->front == Q->rear)
+    {
         printf("Queue is empty.\n");
         return;
     }
