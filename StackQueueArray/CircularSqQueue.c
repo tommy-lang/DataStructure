@@ -26,7 +26,8 @@ Status InitQueue(SqQueue* Q)
 }
 
 // 入队操作（队尾插入）
-Status EnQueue(SqQueue* Q, int e) {
+Status EnQueue(SqQueue* Q, int e)
+{
     if ((Q->rear + 1) % MAXQSIZE == Q->front) {
         return ERROR; // 队列满
     }
