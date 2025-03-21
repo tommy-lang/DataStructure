@@ -131,3 +131,23 @@ void DeleteNodeByValue(LinkList& L, int v)
     }
 }
 
+void TraverseList(const LinkList& L)
+{
+    if(L)
+    {
+        std::cout<<L->data<<" ";
+        TraverseList(L->next);
+    }
+}
+
+int main()
+{
+    LinkList L;
+    InitList(L);
+    ListInsert(L,1,11);
+    ListInsert(L,2,22);
+    ListInsert(L,3,33);
+    ListInsert(L,4,44);
+    ListInsert(L,5,55);
+    TraverseList(L->next);
+}
