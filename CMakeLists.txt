@@ -39,4 +39,5 @@ add_executable(DataStructure
         LinearList/Hanoi.cpp
         LinearList/Hanoi.c
         TreeBiTree/SqBiTree.cpp
-        TreeBiTree/SqBiTree.c)
+        TreeBiTree/SqBiTree.c
+)

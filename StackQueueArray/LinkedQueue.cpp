@@ -1,5 +1,5 @@
 #include <iostream>
-
+using namespace std;
 #define OK 1
 #define ERROR 0
 #define OVERFLOW (-2)
@@ -53,4 +53,34 @@ int GetHead(const LinkQueue& Q)
     if(Q.front!=Q.rear)//不为空队列
         return Q.front->next->data;
     return ERROR;
+}
+
+int main() {
+    LinkQueue Q;
+    InitQueue(Q);
+
+    cout << "Enqueue elements: 10, 20, 30" << endl;
+    EnQueue(Q, 10);
+    EnQueue(Q, 20);
+    EnQueue(Q, 30);
+
+    cout << "Front element: " << GetHead(Q) << endl;
+
+    int e;
+    DeQueue(Q, e);
+    cout << "Dequeued element: " << e << endl;
+    cout << "New front element: " << GetHead(Q) << endl;
+
+    DeQueue(Q, e);
+    cout << "Dequeued element: " << e << endl;
+    cout << "New front element: " << GetHead(Q) << endl;
+
+    DeQueue(Q, e);
+    cout << "Dequeued element: " << e << endl;
+
+    if (DeQueue(Q, e) == ERROR) {
+        cout << "Queue is empty!" << endl;
+    }
+
+    return 0;
 }
