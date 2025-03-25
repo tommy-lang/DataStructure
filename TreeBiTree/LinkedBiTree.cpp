@@ -58,10 +58,20 @@ void InOrderTraverse(const BiTree& T)//中序遍历
 
 void PreOrderTraverse(const BiTree& T)//先序遍历
 {
-
+    if(T!=nullptr)
+    {
+        std::cout<<T->data;
+        PreOrderTraverse(T->rchild);
+        PreOrderTraverse(T->lchild);
+    }
 }
 
 void PostOrderTraverse(const BiTree& T)//后序遍历
 {
-
+    if(T!=nullptr)
+    {
+        PostOrderTraverse(T->rchild);
+        PostOrderTraverse(T->lchild);
+        std::cout<<T->data;
+    }
 }
