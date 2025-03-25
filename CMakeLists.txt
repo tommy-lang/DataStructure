@@ -38,6 +38,6 @@ add_executable(DataStructure
         StackQueueArray/课后算法设计题/AlgorithmDesign5.c
         LinearList/Hanoi.cpp
         LinearList/Hanoi.c
-        TreeBiTree/SqBiTree.cpp
-        TreeBiTree/SqBiTree.c
+        TreeBiTree/LinkedBiTree.cpp
+        TreeBiTree/LinkedBiTree.c
 )

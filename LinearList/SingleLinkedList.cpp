@@ -131,7 +131,7 @@ void DeleteNodeByValue(LinkList& L, int v)
     }
 }
 
-void TraverseList(const LinkList& L)
+void TraverseList(const LinkList& L)//递归遍历
 {
     if(L)
     {
