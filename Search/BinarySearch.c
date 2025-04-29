@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 
 #define OK 1
 #define ERROR 0
