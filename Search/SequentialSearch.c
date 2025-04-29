@@ -19,7 +19,6 @@ typedef struct
     int length;
 } SeqTable;
 
-// 顺序查找
 int SeqSearch(SeqTable s, int k)
 {
     int i;
