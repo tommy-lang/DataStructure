@@ -1,0 +1,19 @@
+# ninja log v5
+1	633	7640881219021997	CMakeFiles/DataStructure.dir/LinearList/SqList.c.obj	6052658035bb2a2c
+112	650	7640881219072022	CMakeFiles/DataStructure.dir/LinearList/SingleLinkedList.c.obj	f6cfdddcbe909b24
+225	996	7640881222683434	CMakeFiles/DataStructure.dir/LinearList/RearInsertion.cpp.obj	6c5d34a340b62bfd
+1479	1600	7640881228725378	CMakeFiles/DataStructure.dir/StackQueueArray/LinkedQueue.c.obj	b0036f6cefe98de3
+635	809	7640881220793310	CMakeFiles/DataStructure.dir/LinearList/HeadInsertion.c.obj	f8de738273e6bed4
+651	840	7640881221093364	CMakeFiles/DataStructure.dir/LinearList/RearInsertion.c.obj	e169882d729fd81b
+1290	1421	7640881226934809	CMakeFiles/DataStructure.dir/StackQueueArray/SqStack.c.obj	9eaa075eeb8525c7
+235	1010	7640881222753441	CMakeFiles/DataStructure.dir/LinearList/SingleLinkedList.cpp.obj	dc7a9648119a027a
+117	1017	7640881222773436	CMakeFiles/DataStructure.dir/LinearList/SqList.cpp.obj	8f04a848da7909df
+230	1004	7640881222673411	CMakeFiles/DataStructure.dir/LinearList/HeadInsertion.cpp.obj	2373242be2cf718f
+997	1150	7640881224225880	CMakeFiles/DataStructure.dir/LinearList/CircularStructureSingleLinkedList.c.obj	a6114cae47b58384
+1011	1166	7640881224385916	CMakeFiles/DataStructure.dir/LinearList/CircularStructureDoublyLinkedList.c.obj	9889ea06cc093fe7
+1150	1289	7640881225601667	CMakeFiles/DataStructure.dir/LinearList/DoublyLinkedList.c.obj	f13e4d3c9a430b7b
+810	1464	7640881227360257	CMakeFiles/DataStructure.dir/LinearList/CircularStructureSingleLinkedList.cpp.obj	c6d12dc729b98b4
+840	1479	7640881227516336	CMakeFiles/DataStructure.dir/LinearList/DoublyLinkedList.cpp.obj	2f58ce80cbd51ea9
+1005	1599	7640881228725378	CMakeFiles/DataStructure.dir/LinearList/CircularStructureDoublyLinkedList.cpp.obj	733005bf21df8b4b
+1166	1747	7640881230204238	CMakeFiles/DataStructure.dir/StackQueueArray/LinkedStack.cpp.obj	1892342aad1ff48a
+1464	1936	7640881232104175	CMakeFiles/DataStructure.dir/StackQueueArray/SqStack.cpp.obj	45ea035e1080635a
