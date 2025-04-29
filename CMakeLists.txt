@@ -43,4 +43,6 @@ add_executable(DataStructure
         TreeBiTree/test.cpp
         Search/SequentialSearch.cpp
         Search/SequentialSearch.c
+        Search/BinarySearch.cpp
+        Search/BinarySearch.c
 )
