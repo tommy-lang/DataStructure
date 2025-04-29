@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 #define OK 1
 #define ERROR 0
@@ -7,40 +7,41 @@
 
 typedef int Status;
 
-// linear search based on sequential list
-typedef struct ElemType
-{
+// 定义元素类型
+typedef struct ElemType {
     int key;
-}ElemType;
+} ElemType;
 
-typedef struct
-{
+// 顺序表定义
+typedef struct {
     ElemType elem[MAXSIZE];
     int length;
-}SeqTable;
+} SeqTable;
 
-int BinarySearch(SeqTable st,ElemType et)
+int BinarySearch(SeqTable st, ElemType et)
 {
-    int low=1;
-    int high=st.length;
-    while(low<=high)
+    int low = 1;
+    int high = st.length;
+    int mid = (low + high) / 2;
+
+    while (st.elem[mid - 1].key != et.key)
     {
-        int mid=(low+high)/2;
-        if(st.elem[mid-1].key==et.key)
+        if (low > high)
         {
-            return mid;
+            return 0; // 查找失败，返回 0
+        }
+
+        if (st.elem[mid - 1].key > et.key)
+        {
+            high = mid - 1;
         }
         else
         {
-            if(st.elem[mid-1].key>et.key)
-            {
-                high=mid-1;
-            }
-            else
-            {
-                low=mid+1;
-            }
+            low = mid + 1;
         }
+
+        mid = (low + high) / 2; // 更新 mid
     }
-    return ERROR;
+
+    return mid; // 查找成功，返回位置
 }
