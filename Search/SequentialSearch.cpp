@@ -30,7 +30,7 @@ int SeqSearch(SeqTable s,int k)
     return -1;
 }
 
-//设置监视哨顺序查找.
+//设置监视哨.
 int SeqSearch_gai(SeqTable s,int k)
 {
     int n,i=0;
