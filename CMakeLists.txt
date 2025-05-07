@@ -45,4 +45,5 @@ add_executable(DataStructure
         Search/SequentialSearch.c
         Search/BinarySearch.cpp
         Search/BinarySearch.c
+        Search/BinarySortTree.cpp
 )
