@@ -40,6 +40,6 @@ int Index_BF(SString S, SString T, int pos) {
     }
 
     if (j == T.length)
-        return i - T.length + 1; // 返回 1-based 位置
+        return i - T.length + 1; // 返回 为1-based 位置
     return 0;
 }
