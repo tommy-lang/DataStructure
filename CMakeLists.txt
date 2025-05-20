@@ -46,4 +46,7 @@ add_executable(DataStructure
         Search/BinarySearch.cpp
         Search/BinarySearch.c
         Search/BinarySortTree.cpp
+        String/BFMatch.cpp
+        String/BFMatch.c
+        String/test.cpp
 )

@@ -32,7 +32,7 @@ BSTree SearchBST(BSTree T, int key)
 }
 
 //二叉排序树的插入
-void InsertBST(BSTree& T,ElemType e)
+void InsertBST(BSTree& T,ElemType e)//插入的结点一定是一个叶子结点
 {
     if (!T)//equals to T==nullptr
     {
@@ -43,13 +43,13 @@ void InsertBST(BSTree& T,ElemType e)
     }//若二叉排序树为空，则将待插入结点*S作为根结点插入空树
     else//若二叉排序树非空，则将key与根结点的关键字T->data.key进行比较
     {
-        if (e.key<T->data.key)
+        if (e.key<T->data.key)//小于根结点数据域值，则插入至左子树
         {
             InsertBST(T->lchild,e);
         }
         else
         {
-            if (e.key>T->data.key)
+            if (e.key>T->data.key)//大于根结点数据域值，则插入至右子树
             {
                 InsertBST(T->rchild,e);
             }
