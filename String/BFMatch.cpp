@@ -14,7 +14,7 @@ int Index_BF(SString S,SString T,int pos);
 int main()
 {
     SString S={"aldolfhans",10};
-    SString T={"dolf",4};
+    SString T={"lfh",3};
     std::cout<<Index_BF(S,T,1);
     return 0;
 }
