@@ -49,4 +49,6 @@ add_executable(DataStructure
         String/BFMatch.cpp
         String/BFMatch.c
         String/test.cpp
+        String/KMPMatch.cpp
+        String/KMPMatch.c
 )
