@@ -75,7 +75,7 @@ void get_nextval(const SString& T, int next[], int nextval[])
 int main()
 {
     SString S = { "ababcabcacbab", 13 };
-    SString T = { "ababaa", 6 };
+    SString T = { "abcabaa", 7};
 
     int next[MAXLEN];
     int nextval[MAXLEN];
